@@ -19,9 +19,6 @@ app = Flask(__name__)
 print(3)
 app.debug = True
 
-@app.route('/qq', methods=["GET"])
-def qq():
-    return "hi"
 
 @app.route('/{}'.format(secret), methods=["POST"])
 def telegram_webhook():
