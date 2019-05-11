@@ -17,7 +17,7 @@ bot.setWebhook("https://130.193.50.33/{}".format(secret), max_connections=10)
 print(2)
 app = Flask(__name__)
 print(3)
-app.debug = True
+#app.debug = True
 
 
 @app.route('/{}'.format(secret), methods=["POST"])
