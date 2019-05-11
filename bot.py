@@ -40,4 +40,4 @@ def telegram_webhook():
     return "OK"
 
 if __name__ == '__main__':
-    app.run(ssl_context='adhoc', host='0.0.0.0')
+    app.run(ssl_context=('cert.pem', 'key.pem'), host='0.0.0.0')
