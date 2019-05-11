@@ -6,3 +6,6 @@ app = Flask(__name__)
 @app.route('/qq', methods=["GET"])
 def qq():
     return "hi"
+
+if __name__ == '__main__':
+    app.run(host='130.193.50.33')

@@ -40,4 +40,4 @@ def telegram_webhook():
     return "OK"
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0')
+    app.run(host='130.193.50.33')
