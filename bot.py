@@ -13,7 +13,7 @@ telepot.api._onetime_pool_spec = (urllib3.ProxyManager, dict(proxy_url=proxy_url
 print(11)
 secret = "769641442:AAHnJbvl0sxsVl-pENmls7FpsVxRhkEttGQ"
 bot = telepot.Bot(secret)
-bot.setWebhook("https://130.193.50.33/{}".format(secret), max_connections=10)
+bot.setWebhook("https://130.193.50.33:5000/{}".format(secret), max_connections=10)
 print(2)
 app = Flask(__name__)
 print(3)
