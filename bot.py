@@ -11,7 +11,7 @@ proxy_url = "http://158.130.53.36:8080"
 #}
 telepot.api._onetime_pool_spec = (urllib3.ProxyManager, dict(proxy_url=proxy_url, num_pools=1, maxsize=1, retries=False, timeout=30))
 print(11)
-secret = "769641442:AAHnJbvl0sxsVl-pENmls7FpsVxRhkEttGQ"
+secret = "769641442:AAF4t5OwL5AMh4ve-DZ2KdgDZVmlLCFGCvY"
 bot = telepot.Bot(secret)
 bot.setWebhook("https://130.193.50.33/{}".format(secret), max_connections=10)
 print(2)
