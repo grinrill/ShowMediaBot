@@ -7,7 +7,7 @@ app = Flask(__name__)
 def qq():
     return "hi"
 
-#if __name__ == '__main__':
-#    app.run(ssl_context=('cert.pem', 'key.pem'), host='0.0.0.0')
 if __name__ == '__main__':
-	app.run(host='0.0.0.0')
+    app.run(ssl_context=('/home/grinrill/certs/grinrill.ml/fullchain.pem', '/home/grinrill/certs/grinrill.ml/privkey.pem'), host='0.0.0.0')
+#if __name__ == '__main__':
+#	app.run(host='0.0.0.0')
