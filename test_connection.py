@@ -7,7 +7,16 @@ app = Flask(__name__)
 def qq():
     return "hi"
 
-if __name__ == '__main__':
-    app.run(ssl_context=('/home/grinrill/certs/grinrill.ml/fullchain.pem', '/home/grinrill/certs/grinrill.ml/privkey.pem'), host='0.0.0.0')
+@app.route('/yandex_0e7083bb3ed93679.html')
+def qq():
+    return """<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+    <body>Verification: 0e7083bb3ed93679</body>
+</html>"""
+
 #if __name__ == '__main__':
-#	app.run(host='0.0.0.0')
+#    app.run(ssl_context=('/home/grinrill/certs/grinrill.ml/fullchain.pem', '/home/grinrill/certs/grinrill.ml/privkey.pem'), host='0.0.0.0')
+if __name__ == '__main__':
+	app.run(host='0.0.0.0', port="8080")
