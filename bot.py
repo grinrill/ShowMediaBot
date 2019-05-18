@@ -11,9 +11,9 @@ proxy_url = "http://158.130.53.36:8080"
 #}
 telepot.api._onetime_pool_spec = (urllib3.ProxyManager, dict(proxy_url=proxy_url, num_pools=1, maxsize=1, retries=False, timeout=30))
 print(11)
-secret = "769641442:AAHnJbvl0sxsVl-pENmls7FpsVxRhkEttGQ"
+secret = "769641442:AAFvjT0DjFDWiArc4Yb657KoQck6zuZCgpE"
 bot = telepot.Bot(secret)
-#bot.setWebhook("https://130.193.50.33:5000/{}".format(secret), max_connections=10)
+bot.setWebhook("https://grinrill.ml:5000/{}".format(secret), max_connections=10)
 print(2)
 app = Flask(__name__)
 print(3)
@@ -40,4 +40,4 @@ def telegram_webhook():
     return "OK"
 
 if __name__ == '__main__':
-    app.run(ssl_context=('cert.pem', 'key.pem'), host='0.0.0.0')
+    app.run(ssl_context=('/home/grinrill/certs/grinrill.ml/fullchain.pem', '/home/grinrill/certs/grinrill.ml/privkey.pem'), host='0.0.0.0')
