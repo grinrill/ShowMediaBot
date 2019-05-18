@@ -13,7 +13,7 @@ telepot.api._onetime_pool_spec = (urllib3.ProxyManager, dict(proxy_url=proxy_url
 print(11)
 secret = "769641442:AAFvjT0DjFDWiArc4Yb657KoQck6zuZCgpE"
 bot = telepot.Bot(secret)
-#bot.setWebhook("https://grinrill.ml:8443/{}".format(secret), max_connections=10)
+bot.setWebhook("https://grinrill.ml:8443/{}".format(secret), max_connections=10)
 print(2)
 app = Flask(__name__)
 print(3)
@@ -25,8 +25,12 @@ def telegram_webhook():
     print(4)
     update = request.get_json()
     if "message" in update:
-        if  update["message"]["forward_from_message_id"] == message_id:
+        try:
+            if  update["message"]["forward_from_message_id"] == message_id:
             return "OK"
+        except Exception as e:
+            pass
+        
         text = update["message"]["text"]
         message_id = update["message"]["message_id"]
         chat_id = update["message"]["chat"]["id"]
