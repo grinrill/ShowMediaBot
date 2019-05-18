@@ -3,9 +3,9 @@ import urllib3
 
 app = Flask(__name__)
 
-@app.route('/qq')
-def qq():
-    return "hi"
+#@app.route('/qq')
+#def qq():
+#    return "hi"
 
 @app.route('/yandex_0e7083bb3ed93679.html')
 def qq():
