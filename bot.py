@@ -27,7 +27,7 @@ def telegram_webhook():
     if "message" in update:
         try:
             if  update["message"]["forward_from_message_id"] == message_id:
-            return "OK"
+            return "200"
         except Exception as e:
             pass
         
