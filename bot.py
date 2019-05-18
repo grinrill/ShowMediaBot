@@ -6,6 +6,7 @@ import urllib3
 message_id = None
 chennel_id = -1001349637964
 proxy_url = "http://158.130.53.36:8080"
+#forward_from_message_id_err = False
 #telepot.api._pools = {
 #    'default': urllib3.ProxyManager(proxy_url=proxy_url, num_pools=3, maxsize=10, retries=False, timeout=30),
 #}
@@ -27,10 +28,11 @@ def telegram_webhook():
     if "message" in update:
         try:
             if  update["message"]["forward_from_message_id"] == message_id:
-            return "200"
+                return "200"
         except Exception as e:
             pass
         
+
         text = update["message"]["text"]
         message_id = update["message"]["message_id"]
         chat_id = update["message"]["chat"]["id"]
