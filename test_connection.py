@@ -7,14 +7,16 @@ app = Flask(__name__)
 #def qq():
 #    return "hi"
 
-@app.route('/yandex_0e7083bb3ed93679.html')
+@app.route('/qq')
 def qq():
-    return """<html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    </head>
-    <body>Verification: 0e7083bb3ed93679</body>
-</html>"""
+	try:
+		http = urllib3.PoolManager()
+		url = 'telegram.org'
+		response = http.request('GET', url)
+		print(response.data)
+		return response.data
+	except Exception as e:
+		return e
 
 #if __name__ == '__main__':
 #    app.run(ssl_context=('/home/grinrill/certs/grinrill.ml/fullchain.pem', '/home/grinrill/certs/grinrill.ml/privkey.pem'), host='0.0.0.0')
